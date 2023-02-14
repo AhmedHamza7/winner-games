@@ -14,6 +14,9 @@ import { AsideComponent } from './components/aside/aside.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    AllGamesComponent
   ]
 })
 export class GamesModule { }

@@ -1,0 +1,10 @@
+.container {
+  margin-top: 50px;
+  display: flex;
+}
+.container app-aside {
+  width: 15%;
+}
+.container .games-content {
+  width: 85%;
+}/*# sourceMappingURL=all-games.component.css.map */

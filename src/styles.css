@@ -1,0 +1,242 @@
+.icon-round {
+  border-radius: 5px;
+}
+
+.color-text {
+  color: var(--text-color);
+}
+
+.color-dark {
+  color: var(--dark-color);
+}
+
+.color-medium {
+  color: var(--medium-color);
+}
+
+.color-light {
+  color: var(--light-color);
+}
+
+.bg-text {
+  background-color: var(--text-color);
+}
+
+.bg-dark {
+  background-color: var(--dark-color);
+}
+
+.bg-medium {
+  background-color: var(--medium-color);
+}
+
+.bg-light {
+  background-color: var(--light-color);
+}
+
+/* You can add global styles to this file, and also import other style files */
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.just-flex {
+  display: flex;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.my-1 {
+  margin-block: 5px;
+}
+
+.my-2 {
+  margin-block: 10px;
+}
+
+.my-3 {
+  margin-block: 15px;
+}
+
+.my-4 {
+  margin-block: 20px;
+}
+
+.my-5 {
+  margin-block: 25px;
+}
+
+.mx-1 {
+  margin-inline: 5px;
+}
+
+.mx-2 {
+  margin-inline: 10px;
+}
+
+.mx-3 {
+  margin-inline: 15px;
+}
+
+.mx-4 {
+  margin-inline: 20px;
+}
+
+.mx-5 {
+  margin-inline: 25px;
+}
+
+.py-1 {
+  padding-block: 5px;
+}
+
+.py-2 {
+  padding-block: 10px;
+}
+
+.py-3 {
+  padding-block: 15px;
+}
+
+.py-4 {
+  padding-block: 20px;
+}
+
+.py-5 {
+  padding-block: 25px;
+}
+
+.px-1 {
+  padding-inline: 5px;
+}
+
+.px-2 {
+  padding-inline: 10px;
+}
+
+.px-3 {
+  padding-inline: 15px;
+}
+
+.px-4 {
+  padding-inline: 20px;
+}
+
+.px-5 {
+  padding-inline: 25px;
+}
+
+/*====== WIDTHS =====*/
+.w-100 {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.4s ease all;
+}
+
+body {
+  font-family: "main-font";
+  overflow-x: hidden;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+@media (max-width: 992px) {
+  .container {
+    width: 90% !important;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 95% !important;
+  }
+}
+
+.section-padding {
+  padding-block: 60px;
+  /*==== make it responsive in mobile app ======*/
+}
+@media (max-width: 768px) {
+  .section-padding {
+    padding-block: 30px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "main-font";
+  src: url("../src/assets/fonts/Merienda-VariableFont_wght.ttf");
+}
+input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--dark-color);
+  color: var(--text-color);
+}
+
+i {
+  color: red !important;
+}
+
+:root {
+  --text-color:white;
+  --dark-color:#151515;
+  --medium-color:#202020;
+  --light-color:#303030;
+}/*# sourceMappingURL=styles.css.map */

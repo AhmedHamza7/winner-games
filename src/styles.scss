@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'app/shared/global-styles/framework' as *;
+
+@include framework;
+@include globalStyles;
+@include classes;
+
+@font-face {
+    font-family: 'main-font';
+    src:url('../src/assets/fonts/Merienda-VariableFont_wght.ttf')
+}
+input{
+    @include inputStyle;
+}
+body {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+}
+i{
+    color:red !important;
+}
+:root{
+    --text-color:white;
+    --dark-color:#151515;
+    --medium-color:#202020;
+    --light-color:#303030;
+}
+
+
+
+

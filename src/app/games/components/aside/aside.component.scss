@@ -1,0 +1,14 @@
+h3{
+    font-size: 24px;
+}
+.aside-item{
+    &:hover{
+        .icon{
+            background-color: white;
+            color:var(--dark-color) !important;
+            // i{
+            //     color:red !important;
+            // }
+        }
+    }
+}
