@@ -1,0 +1,13 @@
+.pc{
+    width: 100%;
+    .container{
+        display: flex;
+        app-aside{
+            width: 15%;
+        }
+        .pc-content{
+            width: 85%;
+            background-color: red;
+        }
+    }
+}
