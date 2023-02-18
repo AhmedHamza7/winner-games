@@ -13,7 +13,7 @@ export class AllGamesComponent implements OnInit {
   constructor(private _gamesService:GamesService) { }
 
   ngOnInit(): void {
-    this._gamesService.getAllGames().subscribe({
+    this._gamesService.getAllGames('games').subscribe({
       next:(res:any)=> this.allGames = res.results
       
     })

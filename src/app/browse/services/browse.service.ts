@@ -1,19 +1,15 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GamesService {
+export class BrowseService {
 
   constructor(private _httpClient:HttpClient) { }
 
-  getAllGames(type:string):Observable<any>{
+  getBrowseData(type:string):Observable<any>{
     return this._httpClient.get(`https://api.rawg.io/api/${type}?key=d87124f7db1d43e589f7dc1172f27880`)
   }
-
-  // getPlatformsTypes():Observable<any>{
-  //   return this._httpClient.get('https://api.rawg.io/api/games?key=d87124f7db1d43e589f7dc1172f27880')
-  // }
 }
