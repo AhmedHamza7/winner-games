@@ -1,0 +1,46 @@
+<div class="all-games">
+    <div class="container">
+        <app-aside></app-aside>
+        <div class="games-content">
+            <div *ngFor="let collection of collectionsData; let i=index" class="game-item card-shadow">
+                <div class="child-item" [ngStyle]="{'background-image':gradientBackground(collection.game_background.url)}">
+                    <div class="collection-info">
+                        <div class="collection-name text-center pointer my-1">
+                            <h2>{{collection.name}}</h2>
+                        </div>
+                        <div class="collection-creator text-center">
+                            <span>Collection<span class=" mx-1">by:</span>{{collection.creator.username}}</span>
+                        </div>
+                        <div class="collection-button text-center my-3 ">
+                            <button class="py-2 color-text icon-round pointer">Follow</button>
+                        </div>
+
+                        <div class="collection-info just-flex text-center">
+                            <div class="popular-items px-2">
+                                <span>{{collection.games_count | number}}</span>
+                                <p>Games</p>
+                            </div>
+                            <div class="popular-items px-2">
+                                <span>{{collection.likes_rating | number}}</span>
+                                <p>Cakes</p>
+                            </div>
+                            <div class="popular-items px-2">
+                                <span>{{collection.likes_users | number}}</span>
+                                <p>Followers</p>
+                            </div>
+                        </div>
+
+                        <div class="images-container">
+                            <div class="collection-images py-5">
+                                <div class="image" *ngFor="let img of collection.game_covers">
+                                    <img [src]="img.url" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

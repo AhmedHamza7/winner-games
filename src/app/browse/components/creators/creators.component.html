@@ -1,1 +1,48 @@
-<p>creators works!</p>
+<div class="all-games">
+    <div class="container">
+        <app-aside></app-aside>
+        <div class="games-content">
+            <div *ngFor="let creator of creatorsData; let i=index" class="game-item card-shadow">
+                <div class="child-item" [ngStyle]="{'background-image':gradientBackground(creator.image_background)}">
+                    <div class="game-info">
+                        <div class="creator-img text-center">
+                            <img [src]="creator.image" alt="">
+                        </div>
+                        <div class="game-name text-center pointer my-1">
+                            <h2>{{creator.name}}</h2>
+                        </div>
+                        <div class="creator-positions text-center">
+                            <span *ngFor="let position of creator.positions">{{position.name}}, </span>
+                        </div>
+                        <div class="game-button text-center my-3 ">
+                            <button class="py-2 color-text icon-round pointer">Follow</button>
+                        </div>
+
+                        <div class="platforms-info">
+                            <div class="popular-items flex-between">
+                                <p>Known For</p>
+                                <span>{{creator.games_count | number}}</span>
+                            </div>
+
+                            <div class="platform-games">
+                                <div class="game">
+                                    <ul>
+                                        <li *ngFor="let game of first3Items[i]" class="flex-between my-2">
+                                            <a class="pointer">{{game.name}}</a>
+                                            <div class="justflex">
+                                                <span class="mx-1">{{game.added | number}}</span>
+                                                <i class="fa-solid fa-user"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

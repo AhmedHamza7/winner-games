@@ -15,7 +15,7 @@
                         <div class="platforms-info">
                             <div class="popular-items flex-between">
                                 <p>Popular Items</p>
-                                <span>{{platform.games_count}}</span>
+                                <span>{{platform.games_count | number}}</span>
                             </div>
 
                             <div class="platform-games">
@@ -24,7 +24,7 @@
                                         <li *ngFor="let game of first3Items[i]" class="flex-between my-2">
                                             <a class="pointer">{{game.name}}</a>
                                             <div class="justflex">
-                                                <span class="mx-1">{{game.added}}</span>
+                                                <span class="mx-1">{{game.added | number}}</span>
                                                 <i class="fa-solid fa-user"></i>
                                             </div>
                                         </li>

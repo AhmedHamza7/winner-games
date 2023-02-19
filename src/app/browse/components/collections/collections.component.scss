@@ -18,23 +18,19 @@
                 .child-item{
                     border-radius: 10px;
                     background-size: cover;
-                    padding: 10px 0px;
-                    .game-info{
+                    padding: 5px 0px;
+                    .collection-info{
                         padding: 15px;
-                        .creator-img{
-                            img{
-                                width: 130px;
-                                height: 130px;
-                                border-radius: 50%;
-                            }
-                        }
-                        .creator-positions{
+                        .collection-creator{
                             span{
                                 font-size: 12px;
                                 font-weight: lighter;
                             }
+                            .mx-1{
+                                color:rgba(255, 255, 255, 0.621);
+                            }
                         }
-                        .game-name{
+                        .collection-name{
                             position: relative;
                             transition: 0.1s all ease;
                             &:hover{
@@ -51,7 +47,7 @@
                                 background-color: rgba(255, 255, 255, 0.621);
                             }
                         }
-                        .game-button{
+                        .collection-button{
                             button{
                                 background-color: #7e7e7ea5;
                                 padding-inline: 30px;
@@ -62,31 +58,52 @@
                             }
                         }
 
-                        .platforms-info{
+                        .collection-info{
                             .popular-items{
                                 font-size: 13px;
                                 font-family: sans-serif ,Tahoma, Verdana ;
                                 font-weight: bold;
                                 padding-bottom: 7px;
-                                border-bottom: 1px solid rgba(109, 109, 109, 0.236);
+                                border-inline: 1px solid rgba(109, 109, 109, 0.236);
                                 span{
                                     color: rgb(198, 198, 198);
                                 }
                             }
-                            .game{
-                                font-size: 13px;
-                                font-family: sans-serif ,Tahoma, Verdana ;
-                                li{
-                                    a {
-                                        border-bottom: 1px solid white;
-                                        &:hover{
-                                            color: rgba(255, 255, 255, 0.503);
-                                            border-bottom: 1px solid rgba(255, 255, 255, 0.503);
-                                        }
+                        }
+
+                        .collection-images{
+                            position: relative;
+                            margin-block: 30px;
+                            max-width: 250px;
+                            .image{
+                                img{
+                                    max-height: 50px;
+                                    min-height: 50px;
+                                    max-width: 90px;
+                                    min-width: 90px;
+                                    border-radius: 10px;
+                                }
+                                &:nth-of-type(1){
+                                    position: absolute;
+                                    top:50%;
+                                    left:5%;
+                                }
+                                &:nth-of-type(2){
+                                    position: absolute;
+                                    top:10%;
+                                    left:50%;
+                                    transform: translateY(10px, 10px);
+                                    transform: translateX(-50%);
+                                    z-index: 66;
+                                    img{
+                                        min-height: 70px !important;
+                                        min-width: 120px;
                                     }
-                                    div {
-                                        color: rgb(198, 198, 198);
-                                    }
+                                }
+                                &:nth-of-type(3){
+                                    position: absolute;
+                                    top:50%;
+                                    right:5%;
                                 }
                             }
                         }

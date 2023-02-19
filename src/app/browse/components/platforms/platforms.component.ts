@@ -21,9 +21,6 @@ export class PlatformsComponent implements OnInit {
       this.first3Items = this.platformsData.map(ele => {
         return ele.games.slice(0, 3)
       })
-
-      console.log(this.first3Items);
-      
   }
   getPlatformsData(){
     this._browseService.getBrowseData('platforms').subscribe({
