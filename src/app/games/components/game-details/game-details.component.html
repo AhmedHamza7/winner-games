@@ -1,1 +1,61 @@
-<p>game-details works!</p>
+<div class="game-details" [ngStyle]="{'background-image':gradientBackground(gameDetailsData.background_image)}">
+    <div class="container">
+        <app-aside></app-aside>
+        <div class="game-details-content">
+            <div class="left-content">
+                <div class="game-details-title">
+                    <div class="release just-flex">
+                        <span class="icon-round">{{gameDetailsData.released | date}}</span>
+                        <p class="mx-2">AVERAGE PLAYTIME: {{gameDetailsData.playtime}} HOURS</p>
+                    </div>
+                    <div class="title my-3">
+                        <h2>{{gameDetailsData.name}}</h2>
+                    </div>
+                </div>
+                <div class="game-details-buttons">
+                    <div class="mygames-button game-button">
+                        <button class="flex-between pointer">
+                            <div>
+                                <p>Add to</p>
+                                <span>My games</span>
+                            </div>
+                            <div class="icon flex-center">
+                                <i class="fa-solid fa-plus color-text"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="wishlist-button">
+                        <button  class="flex-between pointer">
+                            <div>
+                                <p>Add to</p>
+                            <span>Wishlist</span>
+                            </div>
+                            <div class="icon flex-center">
+                                <i class="fa-solid fa-gift color-text"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="collection-button">
+                        <button  class="flex-between pointer">
+                            <div>
+                                <p>Add to</p>
+                                <span>Collection</span>
+                            </div>
+                            <div class="icon flex-center">
+                                <i class="fa-regular fa-folder-open color-text"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="game-images">
+                    <div  *ngFor="let img of screenshotsData"  class="game-image">
+                        <img [src]="img.image" class=" icon-round">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

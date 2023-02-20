@@ -1,0 +1,129 @@
+.game-details{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-block: 100px;
+    .container{
+        display: flex;
+        app-aside{
+            width: 25%;
+        }
+        .game-details-content{
+            width: 75%;
+            display: flex;
+            column-gap: 1rem;
+            .left-content{
+                width:60%;
+                .game-details-title{
+                    .release{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: lighter;
+                        font-size: 14px;
+                        span{
+                            background-color: white;
+                            color:black;
+                            padding: 3px 7px;
+                        }
+                    }
+                    .title{
+                        font-size: 45px;
+                    }
+                }
+                .game-details-buttons{
+                    display: flex;
+                    column-gap: 2rem;
+                    button {
+                        width: 150px;
+                        text-align: left;
+                        padding: 5px 15px;
+                        position: relative;
+                        overflow: hidden;
+                        p{
+                            color: rgb(200, 200, 200);
+                        }
+                        span{
+                            color:white;
+                            font-size: 18px;
+                        }
+                        .icon {
+                            position: absolute;
+                            right: -10px;
+                            width: 35px;
+                            height: 35px;
+                            font-size:22px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .mygames-button {
+                        background-color: white;
+                        border-radius: 7px;
+                        &:hover{
+                            background-color: rgb(171, 171, 171);
+                        }
+                        button{
+                            width: 150px;
+                            padding: 5px 10px;
+                            span{
+                                font-size: 18px;
+                                color: black;
+                            }
+                            p{
+                                text-align: left;
+                                color: rgb(200, 200, 200);
+                            }
+                            .icon {
+                                background:linear-gradient(to bottom, rgb(56, 234, 83), rgb(13, 160, 0));
+                            }
+                        }
+                    }
+                    .wishlist-button{
+                        border-radius: 7px;
+                        border: 2px solid white;
+                        &:hover{
+                            border: 2px solid rgb(184, 184, 184);
+                        }
+                        .icon {
+                            font-size: 30px;
+                        }
+                    }
+                    .collection-button{
+                        &:hover{
+                            span{
+                                color:rgb(184, 184, 184);
+                            }
+                        }
+                    }
+                }
+            }
+            .right-content{
+                width:40%;
+                .game-images{
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    column-gap: 0.5rem;
+                    .game-image{
+                        width: calc((100% / 2) - 0.5rem);
+                        &:nth-of-type(1) {
+                            width: 100%;
+                        }
+                        position: relative;
+                        &:hover:not(:nth-of-type(1), :nth-of-type(6)) {
+                            z-index: 6;
+                            img{
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                transform: scale(1.5);
+                            }
+                        }
+                        img{
+                            
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

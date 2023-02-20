@@ -1,11 +1,11 @@
 nav{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
     .logo{
         h1{
             font-size: 30px;
             letter-spacing: 2px;
-            span{
-                color:#4C30B5;
-            }
         }
     }
     .search-bar{

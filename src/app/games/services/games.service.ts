@@ -13,7 +13,11 @@ export class GamesService {
     return this._httpClient.get(`https://api.rawg.io/api/${type}?key=d87124f7db1d43e589f7dc1172f27880`)
   }
 
-  // getPlatformsTypes():Observable<any>{
-  //   return this._httpClient.get('https://api.rawg.io/api/games?key=d87124f7db1d43e589f7dc1172f27880')
-  // }
+  getGameDetails(id:string):Observable<any>{
+    return this._httpClient.get(`https://api.rawg.io/api/games/${id}?key=d87124f7db1d43e589f7dc1172f27880`)
+  }
+
+  getGameScreenshots(id:string):Observable<any>{
+    return this._httpClient.get(`https://api.rawg.io/api/games/${id}/screenshots?key=d87124f7db1d43e589f7dc1172f27880`)
+  }
 }
