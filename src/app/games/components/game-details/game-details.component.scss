@@ -1,4 +1,4 @@
-.game-details{
+.g-d{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -8,13 +8,13 @@
         app-aside{
             width: 25%;
         }
-        .game-details-content{
+        .g-d-content{
             width: 75%;
             display: flex;
-            column-gap: 1rem;
+            column-gap: 3rem;
             .left-content{
                 width:60%;
-                .game-details-title{
+                .g-d-title{
                     .release{
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                         font-weight: lighter;
@@ -29,7 +29,7 @@
                         font-size: 45px;
                     }
                 }
-                .game-details-buttons{
+                .g-d-buttons{
                     display: flex;
                     column-gap: 2rem;
                     button {
@@ -90,6 +90,83 @@
                         &:hover{
                             span{
                                 color:rgb(184, 184, 184);
+                            }
+                        }
+                    }
+                }
+                .g-d-about{
+                    margin-top: 40px;
+                    h3{
+                        font-size: 30px;
+                    }
+                    .about-p{
+                        line-height: 1.7;
+                        overflow: hidden;
+                    }
+                    button{
+                        background-color: white;
+                        padding: 3px 7px
+                    }
+                    .max-height{
+                        max-height: 200px;
+                    }
+                    .gradient{
+                        mask-image:linear-gradient(#fff, rgba(255,255,255, 0));
+                        -webkit-mask-image: linear-gradient(#fff, rgba(255,255,255, 0));
+                    }
+                }
+                .g-d-ratings{
+                    p{
+                        font-size: 30px;
+                    }
+                    span{
+                        color:rgb(200, 200, 200);
+                        font-size: 14px;
+                    }
+                    .top{
+                        border-inline: 1px solid white;
+                    }
+                }
+                .g-d-website{
+                    a{
+                        border-bottom: 1px solid white;
+                        &:hover{
+                            border:none
+                        }
+                    }
+                }
+                .g-d-developers{
+                    display: flex;
+                    column-gap: 1rem;
+                    .developer{
+                        background-position: center center;
+                        background-size: cover;
+                        padding: 50px 100px;
+                        .dev-name{
+                            position: relative;
+                            transition: 0.1s all ease;
+                            &:hover{
+                                color:rgba(255, 255, 255, 0.564)
+                            }
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                bottom: -5px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 1px;
+                                width: 150px;
+                                background-color: rgba(255, 255, 255, 0.621);
+                            }
+                        }
+                        .dev-button{
+                            button{
+                                background-color: #7e7e7ea5;
+                                padding-inline: 30px;
+                                &:hover{
+                                    background-color: white;
+                                    color: black;
+                                }
                             }
                         }
                     }

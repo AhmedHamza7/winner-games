@@ -1,9 +1,9 @@
-<div class="game-details" [ngStyle]="{'background-image':gradientBackground(gameDetailsData.background_image)}">
+<div class="g-d" [ngStyle]="{'background-image':gradientBackground(gameDetailsData.background_image)}">
     <div class="container">
         <app-aside></app-aside>
-        <div class="game-details-content">
+        <div class="g-d-content">
             <div class="left-content">
-                <div class="game-details-title">
+                <div class="g-d-title">
                     <div class="release just-flex">
                         <span class="icon-round">{{gameDetailsData.released | date}}</span>
                         <p class="mx-2">AVERAGE PLAYTIME: {{gameDetailsData.playtime}} HOURS</p>
@@ -12,7 +12,7 @@
                         <h2>{{gameDetailsData.name}}</h2>
                     </div>
                 </div>
-                <div class="game-details-buttons">
+                <div class="g-d-buttons">
                     <div class="mygames-button game-button">
                         <button class="flex-between pointer">
                             <div>
@@ -45,6 +45,53 @@
                                 <i class="fa-regular fa-folder-open color-text"></i>
                             </div>
                         </button>
+                    </div>
+                </div>
+                <div class="g-d-ratings just-flex">
+                    <div class="rate my-5">
+                        <div class="just-flex">
+                            <p class="fw-bold">{{gameDetailsData.ratings[0].title}}</p>
+                            <i class="fa-solid fa-bullseye mx-2"></i>
+                        </div>
+                        <span class="fw-light">{{gameDetailsData.ratings[0].count}}</span>
+                    </div>
+                    <div class="top px-5 mx-5">
+                        <p class="fw-bold">#1</p>
+                        <span class="fw-light color-light">{{gameDetailsData.genres[0].name}}</span>
+                    </div>
+                    <div class="meta">
+                        <p class="fw-bold">{{gameDetailsData.metacritic}}</p>
+                        <span class="fw-light">Metascore</span>
+                    </div>
+                </div>
+                <div class="g-d-website">
+                    <p>Website</p>
+                    <a [href]="gameDetailsData.website" target="_blank">{{gameDetailsData.website}}</a>
+                </div>
+                <div class="g-d-about my-5">
+                    <h3 class="my-1">ABOUT</h3>
+                    <div  class="about-p max-height gradient">
+                        <p>
+                            {{gameDetailsData.description_raw}}
+                        </p>
+                    </div>
+                    <button class="show-more icon-round"  *ngIf="!showAll" (click)="showMore($event)">
+                        Show More
+                    </button>
+                    <button class="show-less icon-round" *ngIf="showAll"  (click)="showLess($event)">
+                        Show Less
+                    </button>
+                </div>
+                <div class="g-d-developers">
+                    <div *ngFor="let dev of gameDetailsData.developers" class="developer py-3 px-2 icon-round" [ngStyle]="{'background-image':gradientBackground(dev.image_background)}">
+                        <div class="dev-info">
+                            <div class="dev-name text-center pointer">
+                                <h2>{{dev.name}}</h2>
+                            </div>
+                            <div class="dev-button text-center my-3 ">
+                                <button class="py-2 color-text icon-round pointer">Follow</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

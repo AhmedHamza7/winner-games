@@ -13,10 +13,12 @@ import { AsideComponent } from './components/aside/aside.component';
     AllGamesComponent,
     GameDetailsComponent,
     AsideComponent,
+    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+
   ],
   exports:[
     AllGamesComponent,
