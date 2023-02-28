@@ -1,7 +1,5 @@
-<div class="all-games">
-    <div class="container">
-        <app-aside></app-aside>
-        <div class="games-content">
+
+        <div class="games-content flex wrap">
             <a [routerLink]= "['/gamedetails', game.id]"  *ngFor="let game of allGames; let i=index"  class="game-item card-shadow pointer">
                 <div class="child-item">
                         <div class="game-img ">
@@ -53,5 +51,3 @@
                 </div>
             </a>
         </div>
-    </div>
-</div>

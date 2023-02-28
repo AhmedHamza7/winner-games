@@ -1,7 +1,7 @@
 <div class="g-d" [ngStyle]="{'background-image':gradientBackground(gameDetailsData.background_image)}">
-    <div class="container">
+    <div class="container flex">
         <app-aside></app-aside>
-        <div class="g-d-content">
+        <div class="g-d-content flex gx-3">
             <div class="left-content">
                 <div class="g-d-title">
                     <div class="release just-flex">
@@ -12,7 +12,7 @@
                         <h2>{{gameDetailsData.name}}</h2>
                     </div>
                 </div>
-                <div class="g-d-buttons">
+                <div class="g-d-buttons flex gx-2">
                     <div class="mygames-button game-button">
                         <button class="flex-between pointer">
                             <div>
@@ -84,8 +84,8 @@
                 </div>
                 <div class="g-d-developers my-5 py-5">
                     <h3 class="my-1">DEVELOPERS</h3>
-                    <div class="all-developers">
-                        <div *ngFor="let dev of gameDetailsData.developers" class="developer py-3 px-2 icon-round" [ngStyle]="{'background-image':gradientBackground(dev.image_background)}">
+                    <div class="all-developers flex wrap">
+                        <div *ngFor="let dev of gameDetailsData.developers" class="developer flex-center py-3 px-2 icon-round" [ngStyle]="{'background-image':gradientBackground(dev.image_background)}">
                             <div class="dev-info">
                                 <div class="dev-name text-center pointer">
                                     <h2>{{dev.name}}</h2>
@@ -129,9 +129,9 @@
                 </div>
             </div>
             <div class="right-content">
-                <div class="game-images">
+                <div class="game-images flex wrap">
                     <div  *ngFor="let img of screenshotsData"  class="game-image">
-                        <img [src]="img.image" class=" icon-round">
+                        <img [src]="img.image" class="w-100 icon-round">
                     </div>
                 </div>
             </div>

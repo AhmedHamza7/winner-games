@@ -1,17 +1,6 @@
-.all-games{
-    margin-top: 100px;
-    .container{
-        display: flex;
-        app-aside{
-            width: 15%;
-        }
-        .games-content{
-            width: 85%;
-            display: flex;
-            flex-wrap: wrap;
+        .creators-content{
             gap: 1.5rem;
-            .game-item{
-                background-color: var(--medium-color);
+            .creator-item{
                 width:calc((100% / 4) - 1.5rem);
                 position: relative;
                 border-radius: 10px;
@@ -19,7 +8,7 @@
                     border-radius: 10px;
                     background-size: cover;
                     padding: 10px 0px;
-                    .game-info{
+                    .creator-info{
                         padding: 15px;
                         .creator-img{
                             img{
@@ -34,7 +23,7 @@
                                 font-weight: lighter;
                             }
                         }
-                        .game-name{
+                        .creator-name{
                             position: relative;
                             transition: 0.1s all ease;
                             &:hover{
@@ -51,7 +40,7 @@
                                 background-color: rgba(255, 255, 255, 0.621);
                             }
                         }
-                        .game-button{
+                        .creator-button{
                             button{
                                 background-color: #7e7e7ea5;
                                 padding-inline: 30px;
@@ -62,7 +51,7 @@
                             }
                         }
 
-                        .platforms-info{
+                        .creator-info{
                             .popular-items{
                                 font-size: 13px;
                                 font-family: sans-serif ,Tahoma, Verdana ;
@@ -94,5 +83,4 @@
                 }
             }
         }
-    }
-}
+

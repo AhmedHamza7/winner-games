@@ -1,19 +1,16 @@
-<div class="all-games">
-    <div class="container">
-        <app-aside></app-aside>
-        <div class="games-content">
-            <div *ngFor="let platform of platformsData; let i=index" class="game-item card-shadow">
+        <div class="platforms-content flex wrap">
+            <div *ngFor="let platform of platformsData; let i=index" class="platform-item card-shadow">
                 <div class="child-item" [ngStyle]="{'background-image':gradientBackground(platform.image_background)}">
-                    <div class="game-info">
-                        <div class="game-name text-center pointer">
+                    <div class="platform-info">
+                        <div class="platform-name text-center pointer">
                             <h2>{{platform.name}}</h2>
                         </div>
-                        <div class="game-button text-center my-3 ">
+                        <div class="platform-button text-center my-3 ">
                             <button class="py-2 color-text icon-round pointer">Follow</button>
                         </div>
 
-                        <div class="platforms-info">
-                            <div class="popular-items flex-between">
+                        <div class="platform-info">
+                            <div class="popular-items flex-between fw-bold">
                                 <p>Popular Items</p>
                                 <span>{{platform.games_count | number}}</span>
                             </div>
@@ -38,5 +35,3 @@
                 
             </div>
         </div>
-    </div>
-</div>

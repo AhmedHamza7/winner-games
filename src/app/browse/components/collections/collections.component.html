@@ -1,8 +1,5 @@
-<div class="all-games">
-    <div class="container">
-        <app-aside></app-aside>
-        <div class="games-content">
-            <div *ngFor="let collection of collectionsData; let i=index" class="game-item card-shadow">
+        <div class="collections-content flex wrap">
+            <div *ngFor="let collection of collectionsData; let i=index" class="collection-item card-shadow">
                 <div class="child-item" [ngStyle]="{'background-image':gradientBackground(collection.game_background.url)}">
                     <div class="collection-info">
                         <div class="collection-name text-center pointer my-1">
@@ -42,5 +39,3 @@
                 
             </div>
         </div>
-    </div>
-</div>
