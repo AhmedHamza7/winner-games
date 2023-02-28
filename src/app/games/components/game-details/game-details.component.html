@@ -82,14 +82,47 @@
                         Show Less
                     </button>
                 </div>
-                <div class="g-d-developers">
-                    <div *ngFor="let dev of gameDetailsData.developers" class="developer py-3 px-2 icon-round" [ngStyle]="{'background-image':gradientBackground(dev.image_background)}">
-                        <div class="dev-info">
-                            <div class="dev-name text-center pointer">
-                                <h2>{{dev.name}}</h2>
+                <div class="g-d-developers my-5 py-5">
+                    <h3 class="my-1">DEVELOPERS</h3>
+                    <div class="all-developers">
+                        <div *ngFor="let dev of gameDetailsData.developers" class="developer py-3 px-2 icon-round" [ngStyle]="{'background-image':gradientBackground(dev.image_background)}">
+                            <div class="dev-info">
+                                <div class="dev-name text-center pointer">
+                                    <h2>{{dev.name}}</h2>
+                                </div>
+                                <div class="dev-button text-center my-3 ">
+                                    <button class="py-1 color-text icon-round pointer">Follow</button>
+                                </div>
                             </div>
-                            <div class="dev-button text-center my-3 ">
-                                <button class="py-2 color-text icon-round pointer">Follow</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-d-reviews">
+                    <h3 class="my-3 text-center">REVIEWS</h3>
+                    <div class="reviews-content">
+                        <div class="reviews-input">
+                            <textarea id="revInput" class="w-100 bg-dark color-text py-2 px-1 icon-round"></textarea>
+                        </div>
+                        <div class="reviews-button my-2">
+                            <button class="bg-text py-2 px-5 icon-round pointer" (click)="addReview()">Publish</button>
+                        </div>
+                        <div *ngFor="let rev of allReviews; let i =index" class="reviews-published my-4 bg-light px-5 py-4 icon-round">
+                            <div class="user-name">
+                                <h4>Username</h4>
+                            </div>
+                            <div class="user-review fw-light my-5">
+                                <p>{{rev}}</p>
+                            </div>
+                            <div class="review-footer flex-between">
+                                <div class="del-btn">
+                                    <button (click)="deleteReview(i)" class="py-1 px-3 icon-round pointer">
+                                        Delete
+                                    </button>
+                                </div>
+                                <div class="review-icon">
+                                    <i class="fa-solid fa-heart color-text mx-2 pointer"></i>
+                                    <span>0</span>
+                                </div>
                             </div>
                         </div>
                     </div>

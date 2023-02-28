@@ -15,14 +15,13 @@ export class GameDetailsComponent implements OnInit {
   gameDetailsData:any = {}
   screenshotsData:any[] = []
   showAll:boolean = false
+  allReviews:string[] = []
   constructor(private _ActivatedRoute:ActivatedRoute, private _gamesService:GamesService) { }
 
   gradientBackground(img:any){
     return `linear-gradient(to bottom, rgba(32, 32, 32, 0.6), rgba(32, 32, 32, 1)),url(${img})`
   }
-  // gameDetails(){
 
-  // }
   gameScreenshots(){
     this._gamesService.getGameScreenshots(this.gameId).subscribe({
       next:(res) => {
@@ -47,6 +46,20 @@ export class GameDetailsComponent implements OnInit {
     buttonClicked.previousSibling.previousSibling.classList.add('max-height')
     buttonClicked.previousSibling.previousSibling.classList.add('gradient')
   }
+
+  addReview(){
+    let revInput = document.getElementById('revInput')  as HTMLInputElement
+    
+    this.allReviews.push(revInput.value)
+    localStorage.setItem('reviews', JSON.stringify(this.allReviews))
+    revInput.value = ''
+  }
+  deleteReview(i:any){
+    this.allReviews.splice(i,1)
+    localStorage.setItem('reviews', JSON.stringify(this.allReviews))
+
+    
+  }
   ngOnInit(): void {
     this.gameId = this._ActivatedRoute.snapshot.params['gameId']
     this.subscription = this._gamesService.getGameDetails(this.gameId).subscribe({
@@ -55,6 +68,7 @@ export class GameDetailsComponent implements OnInit {
                               console.log(res);
                               }
                         })
+    this.allReviews = JSON.parse(localStorage.getItem('reviews') || '')
     this.gameScreenshots()
   }
   ngOnDestroy(){
