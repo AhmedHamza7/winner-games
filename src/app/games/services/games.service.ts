@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable,BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class GamesService {
 
   constructor(private _httpClient:HttpClient) { }
+  messageSource: BehaviorSubject<string> = new BehaviorSubject('');
 
+  
   getAllGames(type:string):Observable<any>{
     return this._httpClient.get(`https://api.rawg.io/api/${type}?key=d87124f7db1d43e589f7dc1172f27880`)
   }

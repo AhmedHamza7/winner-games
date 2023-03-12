@@ -1,5 +1,5 @@
 import { GamesService } from './../../services/games.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -11,11 +11,14 @@ import { Subscription } from 'rxjs';
 export class GameDetailsComponent implements OnInit {
 
   subscription:Subscription = new Subscription
+
   gameId:string = '';
   gameDetailsData:any = {}
+
   screenshotsData:any[] = []
   showAll:boolean = false
   allReviews:string[] = []
+  loved:number = 0
   constructor(private _ActivatedRoute:ActivatedRoute, private _gamesService:GamesService) { }
 
   gradientBackground(img:any){
@@ -60,19 +63,28 @@ export class GameDetailsComponent implements OnInit {
 
     
   }
+
+  addLove(){
+    this.loved == 0 ? this.loved = this.loved + 1 : this.loved = this.loved - 1
+  }
   ngOnInit(): void {
     this.gameId = this._ActivatedRoute.snapshot.params['gameId']
     this.subscription = this._gamesService.getGameDetails(this.gameId).subscribe({
                             next:(res)=> {
                               this.gameDetailsData = res
+                              this._gamesService.messageSource.next(this.gameDetailsData.background_image)
+
                               console.log(res);
                               }
                         })
+                        
     this.allReviews = JSON.parse(localStorage.getItem('reviews') || '')
     this.gameScreenshots()
   }
   ngOnDestroy(){
     this.subscription.unsubscribe()
+    this._gamesService.messageSource.next('')
+
   }
 
 }

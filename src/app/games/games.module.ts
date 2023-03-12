@@ -1,3 +1,4 @@
+import { AuthenticationModule } from './../authentication/authentication.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,11 +19,11 @@ import { AsideComponent } from './components/aside/aside.component';
   imports: [
     CommonModule,
     RouterModule,
-
   ],
   exports:[
     AllGamesComponent,
-    AsideComponent
+    AsideComponent,
+    GameDetailsComponent
   ]
 })
 export class GamesModule { }

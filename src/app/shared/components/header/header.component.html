@@ -1,16 +1,20 @@
 <nav class="py-4">
     <div class="container flex-between">
-        <div class="logo">
+        <div class="logo pointer" routerLink="/AllGames">
             <h1>↬WINNER↫</h1>
         </div>
         <div class="search-bar">
             <input type="search" placeholder="Search 875,522 games">
         </div>
-        <div class="nav-icons flex-center">
+        <!-- <div class="nav-icons flex-center">
             <a class=" pointer">My library</a>
             <i class="fa-solid fa-bell  mx-2 pointer"></i>
             <i class="fa-solid fa-plus  mx-2 pointer "></i>
             <i class="fa-solid fa-ellipsis  mx-2 pointer "></i>
+        </div> -->
+        <div class="register">
+            <a routerLink="/login" class="mx-3 pointer">login</a>
+            <a routerLink="/signup" class="pointer">Sign up</a>
         </div>
     </div>
 </nav>

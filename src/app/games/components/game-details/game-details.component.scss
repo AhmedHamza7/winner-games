@@ -1,14 +1,4 @@
-.g-d{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding-block: 100px;
-    .container{
-        app-aside{
-            width: 25%;
-        }
         .g-d-content{
-            width: 75%;
             .left-content{
                 width:60%;
                 .g-d-title{
@@ -231,5 +221,3 @@
                 }
             }
         }
-    }
-}

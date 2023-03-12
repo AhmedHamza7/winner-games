@@ -1,9 +1,14 @@
-.container{
-    padding-top: 100px;
-    .aside{
-        width: 15%;
-    }
-    .router{
-        width: 85%;
+.overlay{
+    background-repeat: no-repeat;
+    background-size:100% 100vh;
+    
+    .container{
+        padding-top: 100px;
+        .aside{
+            width: 15%;
+        }
+        .router{
+            width: 85%;
+        }
     }
 }

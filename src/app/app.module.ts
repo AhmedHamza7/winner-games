@@ -1,3 +1,4 @@
+import { AuthenticationModule } from './authentication/authentication.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowseModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthenticationModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

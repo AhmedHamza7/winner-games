@@ -13,7 +13,7 @@ input{
     @include inputStyle;
 }
 body {
-    background-color: var(--dark-color);
+    background-color: rgb(21, 21, 21);
     color: var(--text-color);
 }
 i{

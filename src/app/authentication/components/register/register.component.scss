@@ -1,0 +1,27 @@
+.register-content{
+    background-image: url('../../../../assets/register-background.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    .overlay{
+        background:linear-gradient(to left ,rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.92));
+        height: 100vh;
+        width: 100vw;
+        padding-top: 50px;
+        form{
+            width: 30%;
+            margin: 40px auto;
+        }
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        input{
+            background-color: var(--light-color);
+            border-radius: 5px;
+            &:hover,&:focus{
+                background-color: white;
+            }
+        }
+    }
+}

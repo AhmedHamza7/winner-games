@@ -1,6 +1,6 @@
 
         <div class="games-content flex wrap">
-            <a [routerLink]= "['/gamedetails', game.id]"  *ngFor="let game of allGames; let i=index"  class="game-item card-shadow pointer">
+            <a (click)="getBgImg(game.background_image)" [routerLink]= "['/gamedetails', game.id]"  *ngFor="let game of allGames; let i=index"  class="game-item card-shadow pointer">
                 <div class="child-item">
                         <div class="game-img ">
                             <img [src]="game.background_image" class="w-100" alt="">
