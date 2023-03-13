@@ -1,21 +1,51 @@
 <div class="register-content">
     <div class="overlay">
-        <form [formGroup]="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="postRegisterData()">
+        <p *ngIf="errorMsg" class="submit-error bg-dark color-text text-center py-2 icon-round my-2">{{errorMsg}}</p>
             <h2>Sign up</h2>
             <div>
-                <input type="text" placeholder="First Name" class="my-1">
+                <input type="text" placeholder="First Name" class="my-1" formControlName="first_name">
+                <div *ngIf="registerForm.get('first_name')?.errors && registerForm.get('first_name')?.touched" class="input-errors">
+                    <p *ngIf="registerForm.get('first_name')?.getError('required')" class="bg-error icon-round text-center py-1">First Name is required</p>
+                    <p *ngIf="registerForm.get('first_name')?.getError('minlength')" class="bg-error icon-round text-center py-1">Min length is 3</p>
+                    <p *ngIf="registerForm.get('first_name')?.getError('maxlength')" class="bg-error icon-round text-center py-1">Max length is 10</p>
+                </div>
             </div>
             <div>
-                <input type="text" placeholder="Last Name" class="my-1">
+                <input type="text" placeholder="Last Name" class="my-1" formControlName="last_name">
+                <div *ngIf="registerForm.get('last_name')?.errors && registerForm.get('last_name')?.touched" class="input-errors">
+                    <p *ngIf="registerForm.get('last_name')?.getError('required')" class="bg-error icon-round text-center py-1">Last Name is required</p>
+                    <p *ngIf="registerForm.get('last_name')?.getError('minlength')" class="bg-error icon-round text-center py-1">Min length is 3</p>
+                    <p *ngIf="registerForm.get('last_name')?.getError('maxlength')" class="bg-error icon-round text-center py-1">Max length is 10</p>
+                </div>
             </div>
             <div>
-                <input type="text" placeholder="Email" class="my-1">
+                <input type="email" placeholder="Email" class="my-1" formControlName="email">
+                <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="input-errors">
+                    <p *ngIf="registerForm.get('email')?.getError('required')" class="bg-error icon-round text-center py-1">Email is required</p>
+                    <p *ngIf="registerForm.get('email')?.getError('email')" class="bg-error icon-round text-center py-1">Email is not valid</p>
+                </div>
             </div>
             <div>
-                <input type="text" placeholder="Password" class="my-1">
+                <input type="password" placeholder="Password" class="my-1" formControlName="password">
+                <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="input-errors">
+                    <p *ngIf="registerForm.get('password')?.getError('required')" class="bg-error icon-round text-center py-1">Password is required</p>
+                </div>
             </div>
             <div>
-                <input type="text" placeholder="Age" class="my-1">
+                <input type="text" placeholder="Age" class="my-1" formControlName="age" >
+                <div *ngIf="registerForm.get('age')?.errors && registerForm.get('age')?.touched" class="input-errors">
+                    <p *ngIf="registerForm.get('age')?.getError('required')" class="bg-error icon-round text-center py-1">Age is required</p>
+                    <p *ngIf="registerForm.get('age')?.getError('min')" class="bg-error icon-round text-center py-1">Min is 18</p>
+                    <p *ngIf="registerForm.get('age')?.getError('max')" class="bg-error icon-round text-center py-1">Max is 55</p>
+                </div>
+            </div>
+
+            <div class="form-button bg-text py-2 my-2 pointer just-flex">
+                <button type="submit" class="w-100  pointer">
+                    <i *ngIf="isLoading" class="fas fa-spinner fa-spin color-dark"></i>
+                    Sign up
+                </button>
             </div>
         </form>
     </div>
