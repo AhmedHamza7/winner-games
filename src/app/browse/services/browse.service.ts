@@ -10,6 +10,6 @@ export class BrowseService {
   constructor(private _httpClient:HttpClient) { }
 
   getBrowseData(type:string):Observable<any>{
-    return this._httpClient.get(`https://api.rawg.io/api/${type}?key=d87124f7db1d43e589f7dc1172f27880`)
+    return this._httpClient.get(`https://api.rawg.io/api/${type}?key=f578ec91c934466faff2d811f1787d56`)
   }
 }

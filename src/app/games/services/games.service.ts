@@ -12,14 +12,14 @@ export class GamesService {
 
   
   getAllGames(type:string):Observable<any>{
-    return this._httpClient.get(`https://api.rawg.io/api/${type}?key=d87124f7db1d43e589f7dc1172f27880`)
+    return this._httpClient.get(`https://api.rawg.io/api/${type}?key=f578ec91c934466faff2d811f1787d56`)
   }
 
   getGameDetails(id:string):Observable<any>{
-    return this._httpClient.get(`https://api.rawg.io/api/games/${id}?key=d87124f7db1d43e589f7dc1172f27880`)
+    return this._httpClient.get(`https://api.rawg.io/api/games/${id}?key=f578ec91c934466faff2d811f1787d56`)
   }
 
   getGameScreenshots(id:string):Observable<any>{
-    return this._httpClient.get(`https://api.rawg.io/api/games/${id}/screenshots?key=d87124f7db1d43e589f7dc1172f27880`)
+    return this._httpClient.get(`https://api.rawg.io/api/games/${id}/screenshots?key=f578ec91c934466faff2d811f1787d56`)
   }
 }
